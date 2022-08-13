@@ -6,5 +6,4 @@
 
 Console.WriteLine("Введите трехзначное число:");
 int a = Convert.ToInt32(Console.ReadLine());
-int digit2 = a % 100 / 10;
-Console.WriteLine($"2я цифра числа => {digit2}");
+Console.WriteLine($"2я цифра числа => {a % 100 / 10}");
