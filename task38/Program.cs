@@ -17,8 +17,8 @@ void PrintArray(double[] array)
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
-        else Console.Write(array[i]);
+        if (i < array.Length - 1) Console.Write($"{Math.Round(array[i], 1, MidpointRounding.ToZero)}, ");
+        else Console.Write(Math.Round(array[i], 1, MidpointRounding.ToZero));
     }
     Console.Write("]");
     Console.WriteLine();
@@ -33,10 +33,10 @@ double Diff(double[] arr)
     double min = arr[0];
     for (int i = 0; i < arr.Length; i++)
     {    
-        if (max > arr[i]) max = arr[i];
-        if (min < arr[i]) min = arr[i];
+        if (max > arr[i]) min = arr[i];
+        if (min < arr[i]) max = arr[i];
     }
-    double Diff = min - max;
+    double Diff = max - min;
     return Diff;
 }
-Console.WriteLine($"Разница максимального и минимального значений = : {Diff(arr)}");
+Console.WriteLine($"Разница максимального и минимального значений = {Math.Round(Diff(arr), 2, MidpointRounding.ToZero)}");
